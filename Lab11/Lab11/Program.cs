@@ -11,6 +11,7 @@ namespace Lab11
         static void Main(string[] args)
         {
             var movies = new Movies("Word", "Other Word");
+            Movies.Title();
 
             Console.ReadKey();
         }
@@ -18,17 +19,26 @@ namespace Lab11
 
     class Movies
     {
-        private string title;
-        private string category;
+        private string _title;
+        private string _category;
 
         public Movies(string category, string title)
         {
-            Title = title;
+            title = Title;
+
             
         }
 
-        public string Title { get; set; }
-        public string Category { get; set; }
+        public string Title
+        {
+            get { return _title; }
+            set { _title = value; }
+        }
+        public string Category
+        {
+            get { return _category; }
+            set { _category = value; }
+        }
 
         public void SelectMovie()
         {
